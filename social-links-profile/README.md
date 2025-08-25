@@ -1,49 +1,40 @@
-Hey Katia! Great job on the Social Links Profile component! The design looks clean and your CSS skills are showing. I noticed a few areas where you could make your good code even better:
+# Frontend Mentor - Social links profile
 
-### 1. Use More Semantic HTML
-Instead of generic `div` elements, consider using semantic tags:
+This is a solution to the [Social links profile](https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-```html
-<!-- Instead of -->
-<div class="card">
-  
-<!-- Try -->
-<article class="card">
-```
+## Table of contents
 
-### 2. Target Elements by Class, Not Tag
-This makes your CSS more maintainable:
-
-```css
-/* Instead of */
-.links li { }
-
-/* Try */
-.links__item { }
-```
-
-### 3. More Descriptive CSS Custom Properties
-Make your color variables more intuitive:
-
-```css
-:root {
-  --accent-color: hsl(75, 94%, 57%);
-  --background-dark: hsl(0, 0%, 8%);
-  --card-background: hsl(0, 0%, 12%);
-}
-```
-
-### 4. Consider BEM Methodology
-This would help with organization:
-
-```css
-/* Block Element Modifier approach */
-.card__info { }
-.card__profile-pic { }
-.card__link--hover { }
-```
-
-You can find more information about BEM right here: [BEM Methodology ](https://getbem.com/)
+- [Overview](#overview)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+- [Author](#author)
 
 
-Your implementation is already solid - these tweaks would just take it to the next level! Keep up the great work! 🚀
+## Overview
+
+### Screenshot
+- ### Desktop
+![](./screenshots/card--desktop.png)
+- ### Mobile 
+![](./screenshots/card--mobile.png)
+
+### Links
+
+- Live Site URL: [Click here](https://undecodev.github.io/frontend-mentor/social-links-profile/)
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- BEM
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+
+## Author
+
+- Frontend Mentor - [@UndeCodev](https://www.frontendmentor.io/profile/UndeCodev)
