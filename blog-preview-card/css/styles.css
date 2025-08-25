@@ -1,0 +1,156 @@
+/* Base styles */
+:root {
+  --clr-primary: hsl(47, 88%, 63%);
+  --clr-secondary: hsl(0, 0%, 42%);
+  --clr-tertiary: hsl(0, 0%, 7%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  --font-family: "Figtree", sans-serif;
+
+  --fw-extra-bold: 800;
+  --fw-medium: 500;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 1.6rem;
+  background-color: var(--clr-primary);
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Main styles */
+.main {
+  min-height: 95vh;
+
+  display: grid;
+  place-items: center;
+}
+
+/* Card Component */
+.card {
+  width: min(38rem, 85%);
+  padding: 2rem;
+  border-radius: 1.8rem;
+
+  background-color: var(--clr-white);
+  border: 1px solid var(--clr-secondary);
+  box-shadow: 1rem 1rem var(--clr-tertiary);
+
+  &:hover {
+    cursor: pointer;
+
+    & .card__title {
+      color: var(--clr-primary);
+    }
+  }
+}
+.card__img {
+  border-radius: 1.2rem;
+}
+
+.card__content {
+  & .card__tag {
+    width: fit-content;
+    padding: 0.8rem 1.6rem;
+    border-radius: 4px;
+
+    background-color: var(--clr-primary);
+    font-weight: var(--fw-extra-bold);
+    font-size: 1.4rem;
+  }
+
+  & .card__release-date {
+    font-size: 1.4rem;
+    color: var(--clr-tertiary);
+    font-weight: var(--fw-medium);
+  }
+
+  & .card__title {
+    font-size: 2rem;
+    font-weight: var(--fw-extra-bold);
+    color: var(--clr-tertiary);
+
+    transition: color 0.3s ease-out;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card__title {
+      transition: none;
+    }
+  }
+
+  & .card__description {
+    color: var(--clr-secondary);
+    font-weight: var(--fw-medium);
+    line-height: 1.6;
+
+    font-size: 1.4rem;
+  }
+}
+
+.card,
+.card__content {
+  display: grid;
+  gap: 2.4rem;
+}
+
+.card__author {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+
+  & .card__author-img {
+    width: 3.6rem;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  & .card__author-name {
+    font-weight: var(--fw-extra-bold);
+    font-size: 1.4rem;
+    color: var(--clr-tertiary);
+  }
+}
+
+/* Responsive design (tablet/desktop) */
+@media (min-width: 76.8rem) {
+  .card__content {
+    & .card__title {
+      font-size: 2.4rem;
+    }
+
+    & .card__description {
+      font-size: 1.6rem;
+    }
+  }
+
+  .card__author {
+    & .card__author-img {
+      width: 4rem;
+    }
+
+    & .card__author-name {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+}

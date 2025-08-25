@@ -1,0 +1,79 @@
+/* Base styles */
+:root{
+  --white: hsl(0, 0%, 100%);
+  --slate-300: hsl(212, 45%, 89%);
+  --slate-500: hsl(216, 15%, 48%);
+  --slate-900: hsl(218, 44%, 22%);
+
+  --fw-bold: 700;
+  --fw-regular:  400; 
+}
+
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.6rem;
+  background-color: var(--slate-300);
+}
+
+img{
+  max-width: 100%;
+}
+
+/* Card component */
+.main{
+  min-height: 95vh;
+  display: grid;
+  place-items: center;
+}
+
+.card{
+  width: min(32rem, 90%);
+  background-color: var(--white);
+  padding: 1.6rem;
+  border-radius: 1.8rem;
+  text-align: center;
+
+  box-shadow: .8rem .8rem 4rem rgba(214, 226, 240, 0.4);
+
+  display: grid;
+  gap: 1.6rem;
+
+  & .card__img{
+    border-radius: 1.2rem;
+  }
+  
+  & .card__title,
+  & .card__description{
+    padding-inline: 2rem;
+  }
+  
+  & .card__title{
+    font-size: 2rem;
+    font-weight: var(--fw-bold);
+    color: var(--slate-900);
+  }
+  
+  & .card__description{
+    font-size: 1.5rem;
+    font-weight: var(--fw-regular);
+    color: var(--slate-500);
+    padding-bottom: 1.6rem;
+  }
+}
+
+/* Footer */
+.footer{
+  text-align: center;
+}

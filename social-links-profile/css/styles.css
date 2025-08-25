@@ -1,0 +1,129 @@
+/* Custom Properties */
+:root {
+  /* Colors */
+  --clr-green: hsl(75, 94%, 57%);
+
+  --clr-grey-700: hsl(0, 0%, 20%);
+  --clr-grey-800: hsl(0, 0%, 12%);
+  --clr-grey-900: hsl(0, 0%, 8%);
+
+  --clr-white: hsl(0, 0%, 100%);
+
+  /* Font */
+  --font-family: "Inter", sans-serif;
+
+  --fw-bold: 700;
+  --fw-semi-bold: 600;
+  --fw-regular: 400;
+}
+
+/* Reset and Base Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 1.6rem;
+  line-height: 1.6;
+
+  background-color: var(--clr-grey-900);
+  color: var(--clr-white);
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+.card-container {
+  height: 100vh;
+
+  display: grid;
+  place-items: center;
+}
+
+/* Card Component */
+.card {
+  width: min(36rem, 90%);
+  padding: 2.6rem;
+  border-radius: 0.8rem;
+
+  background-color: var(--clr-grey-800);
+  font-size: 1.4rem;
+
+  display: grid;
+  gap: 2.4rem;
+}
+
+.card__header {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  gap: 2rem;
+
+  & .card__avatar {
+    width: 8rem;
+    border-radius: 50%;
+  }
+
+  & .card__info {
+    & .card__username {
+      font-size: 2.4rem;
+      font-weight: var(--fw-bold);
+    }
+
+    & .card__location {
+      font-weight: var(--fw-semi-bold);
+      color: var(--clr-green);
+    }
+  }
+}
+
+.card__body {
+  display: grid;
+
+  & .card__links {
+    list-style: none;
+    display: grid;
+    gap: 1.6rem;
+
+    & .card__link {
+      & .card__link-text {
+        display: grid;
+
+        border-radius: 0.6rem;
+        padding: 1rem 1.2rem;
+        text-align: center;
+        text-decoration: none;
+
+        background-color: var(--clr-grey-700);
+        font-weight: var(--fw-semi-bold);
+
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+        &:hover {
+          background-color: var(--clr-green);
+          color: var(--clr-grey-900);
+        }
+      }
+    }
+  }
+}
+
+/* Footer */
+.footer{
+  text-align: center;
+  padding: 1.2rem;
+}
