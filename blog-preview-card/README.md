@@ -29,7 +29,7 @@ Users should be able to:
 
 
 ### Links
-- Live Site URL: [Click here](https://undecodev.github.io/blog-preview-card--frontend-mentor/)
+- Live Site URL: [Click here](https://undecodev.github.io/frontend-mentor/blog-preview-card/)
 
 ### Built with
 
