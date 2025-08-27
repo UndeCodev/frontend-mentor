@@ -26,7 +26,7 @@ Users should be able to:
 * #### Desktop
 ![](./screenshots/four-card-feature-section--desktop.png)
 
-* #### Desktop
+* #### Mobile
 ![](./screenshots/four-card-feature-section--mobile.png)
 
 ### Links
