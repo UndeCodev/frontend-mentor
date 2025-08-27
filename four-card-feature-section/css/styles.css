@@ -1,0 +1,181 @@
+:root {
+  /* Colors */
+  /* Primary */
+  --clr-red: hsl(0, 78%, 62%);
+  --clr-cyan: hsl(180, 62%, 55%);
+  --clr-orange: hsl(34, 97%, 64%);
+  --clr-blue: hsl(212, 86%, 64%);
+
+  /* Neutral */
+  --clr-grey-500: hsl(234, 12%, 34%);
+  --clr-grey-400: hsl(212, 6%, 44%);
+  --clr-grey-100: hsl(0, 0%, 98%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  --card-box-shadow: rgba(0, 0, 0, 0.1);
+
+  /* Typography */
+  /* Family */
+  --font-primary: "Poppins", sans-serif;
+
+  /* Weights */
+  --fw-extra-light: 200;
+  --fw-regular: 400;
+  --fw-semi-bold: 600;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  font-size: 1.6rem; /* 16px */
+  font-family: var(--font-primary);
+  font-weight: var(--fw-regular);
+
+  background-color: var(--clr-grey-100);
+  color: var(--clr-grey-400);
+}
+
+/* Main */
+.main {
+  min-height: 95vh;
+  padding: 3.6rem 2.4rem;
+
+  display: grid;
+  place-items: center;
+}
+
+/* Features section */
+.features {
+  max-width: 120rem;
+  margin-inline: auto;
+  
+  text-align: center;
+
+  display: grid;
+  gap: 2.4rem;
+
+  /* Title */
+  & .features__title {
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    
+    font-weight: var(--fw-extra-light);
+    color: var(--clr-grey-500);
+
+    & .features__title--bold {
+      font-weight: var(--fw-semi-bold);
+    }
+  }
+
+  & .features__description {
+    max-width: 58rem;
+    margin-inline: auto;
+  }
+}
+
+/* Cards container */
+.features__cards {
+  display: grid;
+  gap: 3.2rem;
+
+  text-align: initial;
+  margin-top: 3.2rem;
+
+  & .features__card {
+    background-color: var(--clr-white);
+    padding: 3.2rem;
+    border-radius: 0.6rem;
+
+    display: grid;
+    gap: 0.6rem;
+
+    position: relative;
+    overflow: hidden;
+
+    box-shadow: 0.4rem 0.8rem 1.6rem var(--card-box-shadow);
+
+    & .features__card-title {
+      font-weight: var(--fw-semi-bold);
+      color: var(--clr-grey-500);
+    }
+
+    & .features__card-description {
+      font-size: 1.5rem;
+    }
+
+    & .features__card-icon {
+      margin-top: 2.4rem;
+      justify-self: end;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 0.4rem;
+    }
+
+    &.features__card--supervisor::before {
+      background-color: var(--clr-cyan);
+    }
+
+    &.features__card--team-builder::before {
+      background-color: var(--clr-red);
+    }
+
+    &.features__card--karma::before {
+      background-color: var(--clr-orange);
+    }
+
+    &.features__card--calculator::before {
+      background-color: var(--clr-blue);
+    }
+  }
+}
+
+/* Tablet and Desktop styles */
+@media screen and (min-width: 768px) {
+  .features__cards {
+    grid-template-areas:
+      "supervisor team-builder calculator"
+      "supervisor karma        calculator";
+
+    place-items: center;
+
+    & .features__card--supervisor {
+      grid-area: supervisor;
+    }
+
+    & .features__card--team-builder {
+      grid-area: team-builder;
+    }
+
+    & .features__card--karma {
+      grid-area: karma;
+    }
+
+    & .features__card--calculator {
+      grid-area: calculator;
+    }
+  }
+}
+
+/* Footer */
+.attribution{
+  padding: 2.4rem;
+  text-align: center;
+
+  & a {
+    color: var(--clr-blue);
+  }
+}
