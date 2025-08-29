@@ -1,50 +1,57 @@
-# Frontend Mentor - Four card feature section solution
+Hey Henry 👋! Great job on the Four Card section - the layout looks clean and your use of CSS Grid is solid! I found just a few small areas where we can make it even better.
 
-This is a solution to the [Four card feature section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/four-card-feature-section-weK1eFYK). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+#### **Quick Suggestions for Improvement:**
 
-## Table of contents
+**1. Minor HTML Tweaks:**
+```html
+<!-- Add a main heading level -->
+<header>
+  <div class="wrapper wrapper--narrow"> <!-- Fix typo in class name -->
+    <h1>Reliable, efficient delivery<br> <!-- Use <br> instead of span for line break -->
+      <span>Powered by Technology</span>
+    </h1>
+```
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-- [Author](#author)
+**2. CSS Refinements:**
+```css
+/* Improve line-height consistency */
+.card h2 { /* Specific selector for card titles */
+  line-height: 1.2; /* Better than 0.3 */
+  margin-bottom: 0.5rem;
+}
 
+.card p {
+  line-height: 1.6;
+}
 
-## Overview
+/* Better image handling */
+.card img {
+  display: block; /* Remove float */
+  margin-top: 2rem;
+  margin-left: auto; /* Push to right */
+}
 
-### The challenge
+/* Add mobile responsiveness */
+@media (max-width: 894px) {
+  .layout-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-inline: auto;
+  }
+  
+  .wrapper--narrow {
+    width: 100%; /* Full width on mobile */
+    max-width: 500px;
+  }
+}
+```
 
-Users should be able to:
+**3. Accessibility Enhancement:**
+```css
+/* Ensure proper color contrast */
+:root {
+  --dark-grey: hsl(234, 12%, 25%); /* Slightly darker for better contrast */
+}
+```
 
-- View the optimal layout for the site depending on their device's screen size
-
-### Screenshot
-
-* #### Desktop
-![](./screenshots/four-card-feature-section--desktop.png)
-
-* #### Desktop
-![](./screenshots/four-card-feature-section--mobile.png)
-
-### Links
-
-- Live Site URL: [Click here](https://undecodev.github.io/frontend-mentor/four-card-feature-section/)
-
-## My process
-
-### Built with
-
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- BEM
-
-## Author
-
-- Frontend Mentor - [@UndeCodev](https://www.frontendmentor.io/profile/UndeCodev)
-
+Your code is already really good - these are just polish touches! The grid layout is particularly well-implemented. Keep up the great work! 🚀

@@ -1,0 +1,218 @@
+:root {
+  /* Colors */
+  /* Primary */
+  --clr-purple-50: hsl(260, 100%, 95%);
+  --clr-purple-300: hsl(264, 82%, 80%);
+  --clr-purple-500: hsl(263, 55%, 52%);
+
+  /* Neutral */
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-grey-100: hsl(214, 17%, 92%);
+  --clr-grey-200: hsl(0, 0%, 81%);
+  --clr-grey-400: hsl(224, 10%, 45%);
+  --clr-grey-500: hsl(217, 19%, 35%);
+  --clr-dark-blue: hsl(219, 29%, 14%);
+  --clr-black: hsl(0, 0%, 7%);
+
+  /* Typography */
+  --font-primary: "Barlow Semi Condensed", sans-serif;
+
+  /* Font Weights */
+  --fw-medium: 500;
+  --fw-semibold: 600;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: var(--font-primary);
+  font-weight: var(--fw-medium);
+  background-color: var(--clr-grey-100);
+}
+
+/* Testimonials section */
+.testimonials {
+  width: min(100%, 140rem);
+  min-height: 95vh;
+  margin-inline: auto;
+  padding: 6.4rem 2.4rem;
+
+  display: grid;
+  place-content: center;
+  grid-auto-columns: 1fr;
+  gap: 2.8rem;
+}
+
+.testimonials__card {
+  padding: 3.8rem;
+  border-radius: 0.8rem;
+  color: var(--clr-white);
+
+  box-shadow: 2.5rem 3.75rem 3rem -3rem var(--clr-grey-200);
+
+  display: grid;
+  gap: 1.6rem;
+
+  & .testimonials__header {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+
+    & .testimonials__avatar {
+      width: 3.6rem;
+      border-radius: 50%;
+    }
+
+    & .testimonials__info {
+      display: grid;
+      gap: 0.4rem;
+
+      & .testimonials__name {
+        font-size: clamp(1.4rem, 5vw, 1.8rem);
+        font-weight: var(--fw-semibold);
+      }
+
+      & .testimonials__status {
+        color: var(--clr-grey-200);
+        font-size: clamp(1.4rem, 5vw, 1.6rem);
+      }
+    }
+  }
+
+  & .testimonials__quote {
+    font-size: clamp(2rem, 4vw, 2.4rem);
+    font-weight: var(--fw-semibold);
+    line-height: 1.2;
+  }
+
+  & .testimonials__text {
+    line-height: 1.5;
+    font-size: clamp(1.4rem, 5vw, 1.6rem);
+
+    color: var(--clr-grey-200);
+  }
+
+  /* Cards Designs */
+  &.testimonials__card--purple {
+    background-color: var(--clr-purple-500);
+
+    & .testimonials__avatar {
+      border: 2px solid var(--clr-purple-300);
+    }
+
+    & .testimonials__text {
+      color: var(--clr-grey-200);
+    }
+  }
+
+  &.testimonials__card--grey {
+    background-color: var(--clr-grey-500);
+  }
+
+  &.testimonials__card--white {
+    background-color: var(--clr-white);
+    color: var(--clr-black);
+
+    & .testimonials__info {
+      & .testimonials__name {
+        color: var(--clr-grey-500);
+      }
+
+      & .testimonials__status {
+        color: var(--clr-grey-400);
+      }
+    }
+
+    & .testimonials__quote {
+      color: var(--clr-dark-blue);
+    }
+
+    & .testimonials__text {
+      color: var(--clr-grey-500);
+    }
+  }
+
+  &.testimonials__card--dark {
+    background-color: var(--clr-dark-blue);
+    color: var(--clr-white);
+
+    & .testimonials__avatar {
+      border: 2px solid var(--clr-purple-500);
+    }
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .testimonials {
+    grid-template-areas:
+      "card-1 card-1"
+      "card-2 card-5"
+      "card-3 card-5"
+      "card-4 card-4";
+
+    & .testimonials__header {
+      & .testimonials__avatar {
+        width: 4.4rem;
+      }
+    }
+  }
+
+  .testimonials__card:nth-child(1) {
+    grid-area: card-1;
+
+    background-image: url('../images/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    background-size: 13.5rem;
+    background-position: top right 10%;
+  }
+
+  .testimonials__card:nth-child(2) {
+    grid-area: card-2;
+  }
+
+  .testimonials__card:nth-child(3) {
+    grid-area: card-3;
+  }
+
+  .testimonials__card:nth-child(4) {
+    grid-area: card-4;
+  }
+
+  .testimonials__card:nth-child(5) {
+    grid-area: card-5;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1120px) { 
+  .testimonials {
+    grid-template-areas:
+      "card-1 card-1 card-2 card-5"
+      "card-3 card-4 card-4 card-5";
+  }
+}
+
+/* Footer */
+.footer{
+  text-align: center;
+
+  & .attribution{
+    padding: 2.4rem;
+
+    & a{
+      color: var(--clr-purple-500);
+    }
+  }
+}
